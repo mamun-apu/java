@@ -12,7 +12,5 @@ public class Java_01_05_checkEvenOdd {
         }else{
             System.out.println(num + " is a odd number!");
         }
-
-
     }
 }
