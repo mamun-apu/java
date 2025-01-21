@@ -2,7 +2,7 @@ package Java_01_BasicPrograms;
 
 import java.util.Scanner;
 
-public class Java_01_12_checkBowelOrConsonant {
+public class Java_01_12_checkVowelOrConsonant {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("enter the letter: ");
