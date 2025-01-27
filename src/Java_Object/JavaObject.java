@@ -1,16 +1,34 @@
 package Java_Object;
 
 public class JavaObject{
-    public static void main(String args[])
+    String name;
+    int age;
+
+   public JavaObject(String name, int age){
+       this.name = name;
+       this.age = age;
+   }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public static void main(String[] args)
     {
-
-        String onum = "157";
-
-
-        int num = Integer.parseInt(onum, 8);
-
-        System.out.println(
-                "Decimal equivalent of Octal value 157 is: "
-                        + num);
+        JavaObject x = new JavaObject("ab", 28);
+        System.out.println(x.getName());
+        System.out.println(x.getAge());
     }
 }
