@@ -1,10 +1,10 @@
-package Java_Object;
+package Java_04_Object;
 
-public class JavaObject{
+public class Java_04_01_javaObject {
     String name;
     int age;
 
-   public JavaObject(String name, int age){
+   public Java_04_01_javaObject(String name, int age){
        this.name = name;
        this.age = age;
    }
@@ -27,7 +27,7 @@ public class JavaObject{
 
     public static void main(String[] args)
     {
-        JavaObject x = new JavaObject("ab", 28);
+        Java_04_01_javaObject x = new Java_04_01_javaObject("ab", 28);
         System.out.println(x.getName());
         System.out.println(x.getAge());
     }
