@@ -16,9 +16,15 @@ To create a singleton class, we must follow the steps, given below:
 2. Provide global access to that instance by
 
 Declaring all constructors of the class to be private.
-Providing a static method that returns a reference to the instance. The lazy initialization concept is used to write the static methods.
+
+Providing a static method that returns a reference to the instance. The lazy
+initialization concept is used to write the static methods.
+
 The instance is stored as a private static variable.
-Example of singleton classes is Runtime class, Action Servlet, and Service Locator. Private constructors and factory methods are also an example of the singleton class.
+
+Example of singleton classes is Runtime class, Action Servlet,
+and Service Locator. Private constructors and factory methods are
+also an example of the singleton class.
 
 Remember the key points while defining a class as a singleton class that is while designing a singleton class:
 
@@ -41,7 +47,7 @@ new request is made.
 
 We can use this single object repeatedly as per
  the requirements. This is the reason why
- multi-threaded and database applications
+ multithreaded and database applications
  mostly make use of the Singleton pattern in
  Java for caching, logging, thread pooling,
  configuration settings, and much more.
@@ -62,13 +68,22 @@ class Singleton{
         this.num = 10;
         System.out.println("singleton object created with num: " + this.num);
     }
-    public static Singleton getSingleton(){
+    public static synchronized Singleton getSingleton(){
         if(singleton == null){
-            Singleton singleton = new Singleton();
+            singleton = new Singleton();
         }
         return singleton;
     }
-
-
+}
+class SingleTon{
+    private SingleTon(){
+        System.out.println("SingleTon created!");
+    }
+    private static class SingleTonHelper{
+        private static final SingleTon INSTANCE =  new SingleTon();
+    }
+    public static SingleTon getInstance(){
+        return SingleTonHelper.INSTANCE;
+    }
 }
 
