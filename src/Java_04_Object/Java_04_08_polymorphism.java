@@ -14,13 +14,13 @@ public class Java_04_08_polymorphism {
 
         // 2. Runtime Polymorphism (Method Overriding)
         System.out.println("Runtime Polymorphism:");
-        Animal myAnimal;
+//        Animal myAnimal;
+        Dog myAnimal2;
+        myAnimal2 = new Dog();  // Animal reference to Dog object
+        myAnimal2.sound();      // Calls Dog's sound()
 
-        myAnimal = new Dog();  // Animal reference to Dog object
-        myAnimal.sound();      // Calls Dog's sound()
-
-        myAnimal = new Cat();  // Animal reference to Cat object
-        myAnimal.sound();      // Calls Cat's sound()
+        Cat myAnimal3 = new Cat();  // Animal reference to Cat object
+        myAnimal3.sound();      // Calls Cat's sound()
     }
 
     // Compile-Time Polymorphism Example: Calculator Class
