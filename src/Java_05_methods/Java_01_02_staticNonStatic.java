@@ -32,5 +32,6 @@ class Helper {
 
         // Print and display the sum
         System.out.print("sum is = " + s);
+        System.out.println("hello");
     }
 }
