@@ -1,5 +1,4 @@
-package Java_04_Object;
-import java.util.Scanner;
+package Java_04_ObjectOrientedProgramming;
 
 public class Java_04_03_singletonClass {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package Java_04_Object;
+package Java_04_ObjectOrientedProgramming;
 
 public class Java_04_07_dataHiding_abstraction {
     public static void main(String[] args)

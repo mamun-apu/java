@@ -1,4 +1,4 @@
-package Java_04_Object;
+package Java_04_ObjectOrientedProgramming;
 
 public class Java_04_10_methodOverriding {
     public static void main(String[] args) {

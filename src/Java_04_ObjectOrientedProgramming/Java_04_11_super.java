@@ -1,4 +1,4 @@
-package Java_04_Object;
+package Java_04_ObjectOrientedProgramming;
 
 public class Java_04_11_super {
     public static void main(String[] args)
