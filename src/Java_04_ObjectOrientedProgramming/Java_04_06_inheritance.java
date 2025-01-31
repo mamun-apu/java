@@ -4,69 +4,56 @@ public class Java_04_06_inheritance {
     public static void main(String[] args)
     {
 
-        MountainBike mb = new MountainBike(3, 100, 25);
-        System.out.println(mb.toString());
     }
 }
 
-// base class
-class Bicycle {
-    // the Bicycle class has two fields
-    public int gear;
-    public int speed;
-
-    // the Bicycle class has one constructor
-    public Bicycle(int gear, int speed)
-    {
-        this.gear = gear;
-        this.speed = speed;
+class Employee{
+    private String name;
+    private int id;
+    private double salary;
+    Employee(String name, int id, double salary){
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
     }
-
-    // the Bicycle class has three methods
-    public void applyBrake(int decrement)
-    {
-        speed -= decrement;
-    }
-
-    public void speedUp(int increment)
-    {
-        speed += increment;
-    }
-
-    // toString() method to print info of Bicycle
-    public String toString()
-    {
-        return ("No of gears are " + gear + "\n"
-                + "speed of bicycle is " + speed);
+    public void displayDetails(){
+        System.out.println(name + " : " + id + " : " + salary);
     }
 }
 
-// derived class
-class MountainBike extends Bicycle {
-
-    // the MountainBike subclass adds one more field
-    public int seatHeight;
-
-    // the MountainBike subclass has one constructor
-    public MountainBike(int gear, int speed,
-                        int startHeight)
-    {
-        // invoking base-class(Bicycle) constructor
-        super(gear, speed);
-        seatHeight = startHeight;
+class Manager extends Employee{
+    private String department;
+    Manager(String name, int id, double salary, String department){
+        super(name, id, salary);
+        this.department = department;
     }
 
-    // the MountainBike subclass adds one more method
-    public void setHeight(int newValue)
-    {
-        seatHeight = newValue;
+    @Override
+    public void displayDetails(){
+        super.displayDetails();
+        System.out.println("department: " + department);
+    }
+}
+
+class Developer extends Employee{
+    private String programmingLanguage;
+    Developer(String name, int id, double salary, String programmingLanguage){
+        super(name, id, salary);
+        this.programmingLanguage = programmingLanguage;
     }
 
-    // overriding toString() method
-    // of Bicycle to print more info
-    @Override public String toString()
-    {
-        return (super.toString() + "\nseat height is "
-                + seatHeight);
+    @Override
+    public void displayDetails() {
+        super.displayDetails();
+        System.out.println("programming language: " + programmingLanguage);
     }
+
+    public String getProgrammingLanguage() {
+        return programmingLanguage;
+    }
+
+    public void setProgrammingLanguage(String programmingLanguage) {
+        this.programmingLanguage = programmingLanguage;
+    }
+
 }
