@@ -16,6 +16,8 @@ public class Java_04_08_polymorphism {
         System.out.println("Runtime Polymorphism:");
 //        Animal myAnimal;
         Dog myAnimal2;
+
+
         myAnimal2 = new Dog();  // Animal reference to Dog object
         myAnimal2.sound();      // Calls Dog's sound()
 
