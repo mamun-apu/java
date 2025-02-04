@@ -6,6 +6,9 @@ public class Java_04_15_SOLIDPrinciple2 {
     public static void main(String[] args) {
         NotificationService s = new SendOTP();
         s.sendNotification("hello");
+        s = new SendEmail();
+        s.sendNotification("test 2");
+
     }
 }
 
@@ -62,20 +65,21 @@ interface NotificationService{
 class SendEmail implements NotificationService {
     @Override
     public void sendNotification(String message) {
-        System.out.println("message");
+        System.out.println("From email: " + message);
     }
 }
 
 class SendOTP implements NotificationService{
     @Override
     public void sendNotification(String message) {
-        System.out.println("message");
+        System.out.println("From otp: " + message);
     }
 }
 class UseCaseNotification{
     public void use(NotificationService service){
         service = new SendOTP();
-        service.sendNotification("hello");
+        service.sendNotification("test 1");
+
 
     }
 }
