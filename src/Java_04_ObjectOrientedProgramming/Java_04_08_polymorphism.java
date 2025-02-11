@@ -66,18 +66,18 @@ public class Java_04_08_polymorphism {
 }
 
 /*
-Compile-Time Polymorphism (Method Overloading):
+    Compile-Time Polymorphism (Method Overloading):
 
-The Calculator class has three add() methods with different parameter lists.
+    The Calculator class has three add() methods with different parameter lists.
 
-The compiler selects the correct method based on the arguments used.
+    The compiler selects the correct method based on the arguments used.
 
-Runtime Polymorphism (Method Overriding):
+    Runtime Polymorphism (Method Overriding):
 
-The Animal class defines a sound() method.
+    The Animal class defines a sound() method.
 
-Subclasses Dog and Cat override sound() with their own implementations.
+    Subclasses Dog and Cat override sound() with their own implementations.
 
-At runtime, the JVM determines which version of sound() to call
-based on the actual object type (not the reference type).
+    At runtime, the JVM determines which version of sound() to call
+    based on the actual object type (not the reference type).
  */
