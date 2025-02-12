@@ -55,14 +55,19 @@ abstract class Size{
     }
 }
 
-class Areas extends Shape{
+class Areas implements ShapeOfObject {
     int width;
     int height;
     Areas(int width, int height){
         this.width = width;
         this.height = height;
     }
-    void draw(){
+    void drawing(){
         System.out.println("width is: " + width +" and height is: " + height);
+    }
+
+    @Override
+    public void draw() {
+
     }
 }
