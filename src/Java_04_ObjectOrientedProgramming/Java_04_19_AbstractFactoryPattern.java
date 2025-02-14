@@ -70,7 +70,7 @@ class FactoryProducer {
     }
 }
 
-public class Java_04_16_AbstractFactoryPattern {
+public class Java_04_19_AbstractFactoryPattern {
     public static void main(String[] args) {
         System.out.println("Abstract Factory Pattern");
         System.out.println("=======================");
