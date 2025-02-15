@@ -17,7 +17,14 @@ public class Java_01_01_AbstractFactoryMethodPattern {
         factory.createButton().showButton();
         factory.createCheckbox().showCheckbox();
         factory.createMenu().showMenu();
+    /*
+        The abstract factory pattern is a creational design pattern
+        that provides an interface for creating families of related or
+        dependant objects without specifying their concrete classes.
+        to ensure scalability and maintainability
 
+        Basically, It is a layer over the factory method pattern,
+     */
     }
 }
 /*-----Interfaces-------*/
