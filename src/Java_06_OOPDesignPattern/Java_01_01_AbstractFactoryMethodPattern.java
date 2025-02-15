@@ -2,6 +2,21 @@ package Java_06_OOPDesignPattern;
 
 public class Java_01_01_AbstractFactoryMethodPattern {
     public static void main(String[] args){
+        GUIFactory factory = null;
+        factory = new WindowsFactory();
+        factory.createButton().showButton();
+        factory.createCheckbox().showCheckbox();
+        factory.createMenu().showMenu();
+
+        factory = new MacFactory();
+        factory.createButton().showButton();
+        factory.createCheckbox().showCheckbox();
+        factory.createMenu().showMenu();
+
+        factory = new LinuxFactory();
+        factory.createButton().showButton();
+        factory.createCheckbox().showCheckbox();
+        factory.createMenu().showMenu();
 
     }
 }
