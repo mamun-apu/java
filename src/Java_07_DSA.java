@@ -25,9 +25,9 @@ public class Java_07_DSA {
 
         ArrayList<String> myFriends3 = new ArrayList<>(Arrays.asList(myFriends2));
         myFriends3.add("hi");
-        System.out.println(myFriends3.get(0));
+        System.out.println(myFriends3.getFirst());
         myFriends3.set(0, "yo");
-        System.out.println(myFriends3.get(0));
+        System.out.println(myFriends3.get(1));
         System.out.println(myFriends3);
 
         myFriends3.remove(1);
