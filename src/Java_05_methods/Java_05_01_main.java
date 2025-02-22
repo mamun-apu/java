@@ -16,7 +16,7 @@ package Java_05_methods;
 
 
  */
-public class Java_01_01_main {
+public class Java_05_01_main {
     public static void main(String[] args){//args stands for command-line arguments
         System.out.println("Hello world!");
     }

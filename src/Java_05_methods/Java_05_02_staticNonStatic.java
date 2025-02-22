@@ -10,16 +10,17 @@ package Java_05_methods;
 
 */
 
-public class Java_01_02_staticNonStatic {
-}
-class Helper {
-
-    // Static method
+public class Java_05_02_staticNonStatic {
     public static int sum(int a, int b)
     {
         // Simply returning the sum
         return a + b;
     }
+}
+class Helper {
+
+    // Static method
+
     public static void main(String[] args)
     {
         // Custom values for integer
@@ -28,7 +29,7 @@ class Helper {
 
         // Calling the static method of above class
         // and storing sum in integer variable
-        int s = Helper.sum(n, m);
+        int s = Java_05_02_staticNonStatic.sum(n, m);
 
         // Print and display the sum
         System.out.print("sum is = " + s);

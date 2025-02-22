@@ -1,6 +1,6 @@
 package Java_05_methods;
 
-public class Java_01_03_toString {
+public class Java_05_03_toString {
     // Main driver method
     public static void main(String[] args)
     {

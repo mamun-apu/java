@@ -1,6 +1,6 @@
 package Java_06_OOPDesignPattern;
 
-public class Java_01_01_AbstractFactoryMethodPattern {
+public class Java_06_01_AbstractFactoryMethodPattern {
     public static void main(String[] args){
         GUIFactory factory = null;
         factory = new WindowsFactory();

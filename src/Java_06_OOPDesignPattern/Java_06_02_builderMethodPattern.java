@@ -1,6 +1,6 @@
 package Java_06_OOPDesignPattern;
 
-public class Java_01_02_builderMethodPattern {
+public class Java_06_02_builderMethodPattern {
     public static void main(String[] args){
         ComputerDirector director = new ComputerDirector();
 
