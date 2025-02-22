@@ -1,7 +1,9 @@
+package Java_07_DSA;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Java_07_DSA {
+public class Java_07_01_DSA {
     public static void main(String[] args) {
         String[] myFriends = {
                 "hello", "World", "how", "are", "you!"
@@ -37,5 +39,14 @@ public class Java_07_DSA {
         System.out.println(myFriends3);
 
         System.out.println("*****************");
+        ArrayList<String> myFriends4 = new ArrayList<>(Arrays.asList(myFriends2));
+        myFriends4.add("hello");
+        System.out.println(myFriends4.get(0));
+        System.out.println(myFriends4.get(1));
+        System.out.println(myFriends4.get(2));
+        System.out.println(myFriends4.get(3));
+        System.out.println(myFriends4.get(4));
+
+
     }
 }
