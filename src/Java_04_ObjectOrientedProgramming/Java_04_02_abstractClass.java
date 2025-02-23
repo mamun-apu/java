@@ -1,6 +1,8 @@
 package Java_04_ObjectOrientedProgramming;
 
 
+import Java_06_OOPDesignPattern.ShapeOfObject;
+
 public class Java_04_02_abstractClass {
 
     public static void main(String[] args){
