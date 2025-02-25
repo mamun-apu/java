@@ -1,10 +1,24 @@
 package Java_04_ObjectOrientedProgramming;
 
 public class Java_04_03_singletonClass {
-    public static void main(String[] args){
-        Singleton s1 = Singleton.getSingleton();
-        Singleton s2 = Singleton.getSingleton();
-        Singleton s3 = Singleton.getSingleton();
+    public static void main(String[] args) {
+        Singleton s1 = Singleton.getInstance();
+        Singleton s2 = Singleton.getInstance();
+        Singleton s3 = Singleton.getInstance();
+    }
+}
+class Singleton{
+    private void SingleTon(){
+        System.out.println("SingleTon created!");
+    }
+    private static class SingleTonHelper{
+        private static final Singleton INSTANCE =  new Singleton();
+    }
+    public static Singleton getInstance(){
+        return SingleTonHelper.INSTANCE;
+    }
+}
+
 
 /*
 How to Design/Create a Singleton Class in Java?
@@ -57,32 +71,19 @@ us to do multithreading, then the Singleton class comes into
 the picture and makes sure that at a time, only a single
 connection or a single thread can access the connection.
  */
-    }
-}
 
-class Singleton{
-    private static Singleton singleton;
-    int num;
-    private Singleton(){
-        this.num = 10;
-        System.out.println("singleton object created with num: " + this.num);
-    }
-    public static synchronized Singleton getSingleton(){
-        if(singleton == null){
-            singleton = new Singleton();
-        }
-        return singleton;
-    }
-}
-class SingleTon{
-    private SingleTon(){
-        System.out.println("SingleTon created!");
-    }
-    private static class SingleTonHelper{
-        private static final SingleTon INSTANCE =  new SingleTon();
-    }
-    public static SingleTon getInstance(){
-        return SingleTonHelper.INSTANCE;
-    }
-}
+//class Singleton{
+//    private static Singleton singleton;
+//    int num;
+//    private Singleton(){
+//        this.num = 10;
+//        System.out.println("singleton object created with num: " + this.num);
+//    }
+//    public static synchronized Singleton getSingleton(){
+//        if(singleton == null){
+//            singleton = new Singleton();
+//        }
+//        return singleton;
+//    }
+//}
 

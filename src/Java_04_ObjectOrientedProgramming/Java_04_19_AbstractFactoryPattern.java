@@ -1,4 +1,4 @@
-package Java_06_OOPDesignPattern;
+package Java_04_ObjectOrientedProgramming;
 
 interface ShapeOfObject {
     void draw();
