@@ -1,112 +1,165 @@
 package Java_06_OOPDesignPattern;
 
 public class Java_06_02_builderMethodPattern {
-    public static void main(String[] args){
-        ComputerDirector director = new ComputerDirector();
+    public static void main(String[] args) {
+        Director director = new Director();
 
-        // Create a gaming PC
-        Computer.ComputerBuilder gamingPCBuilder = new Computer.ComputerBuilder();
-        director.constructGamingPc(gamingPCBuilder);
-        Computer gamingPC = gamingPCBuilder.build();
+        // Construct a Vegan Meal
+        VeganMealBuilder veganBuilder = new VeganMealBuilder();
+        director.constructVeganMeal(veganBuilder);
+        Meal veganMeal = veganBuilder.build();
 
-        // Create an office PC
-        Computer.ComputerBuilder officePCBuilder = new Computer.ComputerBuilder();
-        director.constructOfficePc(officePCBuilder);
-        Computer officePC = officePCBuilder.build();
+        System.out.println("Vegan Meal constructed:");
+        System.out.println("Starter: " + veganMeal.getStarter());
+        System.out.println("Main: " + veganMeal.getMain());
+        System.out.println("Dessert: " + veganMeal.getDessert());
+        System.out.println("Drink: " + veganMeal.getDrink());
+        System.out.println();
 
-        // Create a server PC
-        Computer.ComputerBuilder serverPCBuilder = new Computer.ComputerBuilder();
-        director.constructServerPc(serverPCBuilder);
+        // Construct a Healthy Meal
+        HealthyMealBuilder healthyBuilder = new HealthyMealBuilder();
+        director.constructHealthyMeal(healthyBuilder);
+        Meal healthyMeal = healthyBuilder.build();
 
-        Computer serverPC = serverPCBuilder.build();
-
-        System.out.println(gamingPC);
-        System.out.println(officePC);
-        System.out.println(serverPC);
+        System.out.println("Healthy Meal constructed:");
+        System.out.println("Starter: " + healthyMeal.getStarter());
+        System.out.println("Main: " + healthyMeal.getMain());
+        System.out.println("Dessert: " + healthyMeal.getDessert());
+        System.out.println("Drink: " + healthyMeal.getDrink());
     }
 }
-class Computer{
-    private final String cpu;
-    private final String ram;
-    private final String storage;
-    private final String gpu;
+// Product class representing a meal
+class Meal {
+    private String starter;
+    private String main;
+    private String dessert;
+    private String drink;
 
-    private Computer(ComputerBuilder builder){
-        this.cpu = builder.cpu;
-        this.ram = builder.ram;
-        this.storage = builder.storage;
-        this.gpu = builder.gpu;
+    public void setStarter(String starter) {
+        this.starter = starter;
     }
 
-    public String getCpu(){
-        return cpu;
+    public void setMain(String main) {
+        this.main = main;
     }
-    public String getRam(){
-        return ram;
+
+    public void setDessert(String dessert) {
+        this.dessert = dessert;
     }
-    public String getStorage(){
-        return storage;
+
+    public void setDrink(String drink) {
+        this.drink = drink;
     }
-    public String getGpu(){
-        return gpu;
+
+    public String getStarter() {
+        return starter;
+    }
+
+    public String getMain() {
+        return main;
+    }
+
+    public String getDessert() {
+        return dessert;
+    }
+
+    public String getDrink() {
+        return drink;
+    }
+}
+
+// Builder Interface
+interface MealBuilder {
+    void buildStarter();
+    void buildMain();
+    void buildDessert();
+    void buildDrink();
+    Meal build();
+}
+
+// Concrete Builder for a Vegan Meal
+class VeganMealBuilder implements MealBuilder {
+    private Meal meal;
+
+    public VeganMealBuilder() {
+        this.meal = new Meal();
     }
 
     @Override
-    public String toString() {
-        return "Computer { " +
-                "CPU='" + cpu + '\'' +
-                ", RAM='" + ram + '\'' +
-                ", Storage='" + storage + '\'' +
-                ", GPU='" + (gpu != null ? gpu : "None") + '\'' +
-                " }";
+    public void buildStarter() {
+        meal.setStarter("Vegan Salad");
     }
 
+    @Override
+    public void buildMain() {
+        meal.setMain("Grilled Tofu with Quinoa");
+    }
 
-    public static class ComputerBuilder{
-        private String cpu;
-        private String ram;
-        private String storage;
-        private String gpu;
+    @Override
+    public void buildDessert() {
+        meal.setDessert("Vegan Chocolate Cake");
+    }
 
-        public ComputerBuilder addCpu(String cpu){
-            this.cpu = cpu;
-            return this;
-        }
-        public ComputerBuilder addRam(String ram){
-            this.ram = ram;
-            return this;
-        }
-        public ComputerBuilder addStorage(String storage){
-            this.storage = storage;
-            return this;
-        }
-        public ComputerBuilder addGpu(String gpu){
-            this.gpu = gpu;
-            return this;
-        }
-        public Computer build(){
-            return new Computer(this);
-        }
+    @Override
+    public void buildDrink() {
+        meal.setDrink("Fresh Orange Juice");
+    }
+
+    @Override
+    public Meal build() {
+        return meal;
+    }
+}
+
+// Concrete Builder for a Healthy Meal
+class HealthyMealBuilder implements MealBuilder {
+    private Meal meal;
+
+    public HealthyMealBuilder() {
+        this.meal = new Meal();
+    }
+
+    @Override
+    public void buildStarter() {
+        meal.setStarter("Greek Yogurt with Honey");
+    }
+
+    @Override
+    public void buildMain() {
+        meal.setMain("Grilled Chicken with Steamed Vegetables");
+    }
+
+    @Override
+    public void buildDessert() {
+        meal.setDessert("Fresh Mixed Berries");
+    }
+
+    @Override
+    public void buildDrink() {
+        meal.setDrink("Green Smoothie");
+    }
+
+    @Override
+    public Meal build() {
+        return meal;
+    }
+}
+
+// Director Class to construct meals
+class Director {
+    public void constructVeganMeal(MealBuilder builder) {
+        builder.buildStarter();
+        builder.buildMain();
+        builder.buildDessert();
+        builder.buildDrink();
+    }
+
+    public void constructHealthyMeal(MealBuilder builder) {
+        builder.buildStarter();
+        builder.buildMain();
+        builder.buildDessert();
+        builder.buildDrink();
     }
 }
 
 
-class ComputerDirector{
-    public void constructGamingPc(Computer.ComputerBuilder builder){
-        builder.addCpu("Intel i9")
-                .addRam("16 gb")
-                .addStorage("2 TeraByte")
-                .addGpu("NVIDIA RTX 3090");
-    }
-    public void constructOfficePc(Computer.ComputerBuilder builder){
-        builder.addCpu("Intel i5")
-                .addRam("8 GB")
-                .addStorage("1 TeraByte")
-                .addGpu("Nvidia 100");
-    }
-    public void constructServerPc(Computer.ComputerBuilder builder){
-        builder.addCpu("AMD EPYC 7742")
-                .addRam("8 gb")
-                .addStorage("200 terabyte");
-    }
-}
