@@ -1,6 +1,7 @@
 package Java_07_DSA;
 
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class Java_07_03_Queue {
@@ -17,6 +18,20 @@ public class Java_07_03_Queue {
         name.offer("al mamun");
         System.out.println("after offer " + name);
 
+        Queue<String> pq = new PriorityQueue<>();
 
+        pq.add("Geeks");
+        pq.add("For");
+        pq.add("Geeks");
+
+        System.out.println("Initial Queue " + pq);
+
+        pq.remove("Geeks");
+
+        System.out.println("After Remove " + pq);
+
+        System.out.println("Poll Method " + pq.poll());
+
+        System.out.println("Final Queue " + pq);
     }
 }
